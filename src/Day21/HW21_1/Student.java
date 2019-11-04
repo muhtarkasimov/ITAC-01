@@ -1,21 +1,23 @@
 package Day21.HW21_1;
 
-public class Student {
+public class Student extends Person {
 
-    private String birthDate;
-    private String surname;
-    private String name;
-    private String gender;
-    private int age;
+    String studentId;
+    String birthDate;
 
-    public Student(){}
+    public Student() {}
 
-    public Student(String birthDate, String surname, String name, String gender, int age) {
-        this.birthDate = birthDate;
-        this.surname = surname;
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
+    public Student(String birthDate, String studentId) {
+        setBirthDate(birthDate);
+        setStudentId(studentId);
+    }
+
+    public Student(String fullName, int age, String gender, String birthDate, String studentId) {
+        super.setAge(age);
+        super.setFullName(fullName);
+        super.setGender(gender);
+        setBirthDate(birthDate);
+        setStudentId(studentId);
     }
 
     public String getBirthDate() {
@@ -23,53 +25,22 @@ public class Student {
     }
 
     public void setBirthDate(String birthDate) {
-        if (birthDate.equals("")) return;
         this.birthDate = birthDate;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setSurname(String surname) {
-        if (surname.equals("")) return;
-        this.surname = surname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        if (name.equals("")) return;
-        this.name = name;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        if (gender.equals("")) return;
-        this.gender = gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        if (age < 0) return;
-        this.age = age;
+    public void setStudentId(String studentId) {
+        if (studentId.equals("")) return;
+        this.studentId = studentId;
     }
 
     @Override
     public String toString() {
-        String s = "Student's name: " + name +
-                "\nSurname: " + surname +   
-                "\nBirth date: " + birthDate +
-                "\nGender: " + gender +
-                "\nAge: " + age + "\n";
+        String s = super.toString() + "\nMy birth date is " + birthDate +
+                "\nMy student id is " + studentId;
 
         return s;
     }
