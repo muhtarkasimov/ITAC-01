@@ -61,4 +61,10 @@ public class Horse {
         if (color.equals("")) return;
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        String s = "Horse's nickname is " + nickname + ", it's age is " + age + ", it's weight is " + weight + " kilograms, color is " + color + " and gender is " + gender;
+        return s;
+    }
 }

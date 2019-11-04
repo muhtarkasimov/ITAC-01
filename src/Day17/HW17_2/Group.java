@@ -12,10 +12,10 @@ public class Group {
     public Group(){}
 
     public Group(Student[] group, Course course, String startDate, int duration) {
-        this.group = group;
-        this.course = course;
-        this.startDate = startDate;
-        this.duration = duration;
+        setGroup(group);
+        setCourse(course);
+        setStartDate(startDate);
+        setDuration(duration);
     }
 
     public Student[] getGroup() {
@@ -39,6 +39,7 @@ public class Group {
     }
 
     public void setStartDate(String startDate) {
+        if (startDate.equals("")) return;
         this.startDate = startDate;
     }
 
@@ -49,5 +50,17 @@ public class Group {
     public void setDuration(int duration) {
         if (duration < 0) return;
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println(course);
+        String s = "Start Date: " + startDate +
+                "\nDuration: " + duration +
+        "\nGroup: \n";
+        for (Student student : group) {
+            System.out.println(student);
+        }
+        return s;
     }
 }

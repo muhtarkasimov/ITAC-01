@@ -75,4 +75,11 @@ public class Farm {
         System.out.println("sheeps = " + sheeps.length);
         System.out.println();
     }
+
+    @Override
+    public String toString() {
+        String s = "Farm's address is " + address + "\nOwner is " + ownerFullName + "\nIt has:\n" + cows.length + " cows\n" + horses.length + " horses\n" + sheeps.length + " sheeps";
+
+        return s;
+    }
 }

@@ -33,5 +33,13 @@ public class HW19_1 {
 
         farm1.printInfo();
         farm2.printInfo();
+
+        System.out.println(sheep1);
+        System.out.println(cow1);
+        System.out.println(horse1);
+
+        System.out.println(farm1);
+        System.out.println(farm2);
+
     }
 }

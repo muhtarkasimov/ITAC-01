@@ -1,19 +1,18 @@
 package Day19.HW19_1;
 
-public class Sheep {
-
-    double weight; //kilogram
+public class Animal {
+    double weight;
     int age;
     String gender;
     String nickname;
 
-    public Sheep() {}
+    public Animal() {}
 
-    public Sheep(double weight, int age, String gender, String nickname) {
-        setWeight(weight);
-        setAge(age);
-        setGender(gender);
-        setNickname(nickname);
+    public Animal(double weight, int age, String gender, String nickname) {
+        this.weight = weight;
+        this.age = age;
+        this.gender = gender;
+        this.nickname = nickname;
     }
 
     public double getWeight() {
@@ -21,7 +20,6 @@ public class Sheep {
     }
 
     public void setWeight(double weight) {
-        if (weight < 0) return;
         this.weight = weight;
     }
 
@@ -30,7 +28,6 @@ public class Sheep {
     }
 
     public void setAge(int age) {
-        if (age < 0) return;
         this.age = age;
     }
 
@@ -39,7 +36,6 @@ public class Sheep {
     }
 
     public void setGender(String gender) {
-        if (gender.equals("")) return;
         this.gender = gender;
     }
 
@@ -48,14 +44,8 @@ public class Sheep {
     }
 
     public void setNickname(String nickname) {
-        if (nickname.equals("")) return;
         this.nickname = nickname;
     }
 
-    @Override
-    public String toString() {
-        String s = "Sheep's nickname is " + nickname + ", it's age is " + age + ", it's weight is " + weight + " kilograms and gender is " + gender;
-        return s;
-    }
 
 }

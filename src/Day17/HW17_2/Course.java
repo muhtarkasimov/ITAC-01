@@ -12,10 +12,10 @@ public class Course {
     public Course(){}
 
     public Course(String courseName, String creationDate, int id, String mentorFullName) {
-        this.courseName = courseName;
-        this.creationDate = creationDate;
-        this.id = id;
-        this.mentorFullName = mentorFullName;
+        setCourseName(courseName);
+        setCreationDate(creationDate);
+        setId(id);
+        setMentorFullName(mentorFullName);
     }
 
     public String getCourseName() {
@@ -23,6 +23,7 @@ public class Course {
     }
 
     public void setCourseName(String courseName) {
+        if (courseName.equals("")) return;
         this.courseName = courseName;
     }
 
@@ -31,6 +32,7 @@ public class Course {
     }
 
     public void setCreationDate(String creationDate) {
+        if (creationDate.equals("")) return;
         this.creationDate = creationDate;
     }
 
@@ -39,6 +41,7 @@ public class Course {
     }
 
     public void setId(int id) {
+        if (id < 0) return;
         this.id = id;
     }
 
@@ -47,6 +50,16 @@ public class Course {
     }
 
     public void setMentorFullName(String mentorFullName) {
+        if (mentorFullName.equals("")) return;
         this.mentorFullName = mentorFullName;
+    }
+
+    @Override
+    public String toString() {
+        String s = "Course name: " + courseName +
+                "\nCreationDate: " + creationDate +
+                "\nCourse id: " + id +
+                "\nMentor's Name: " + mentorFullName + "\n";
+        return s;
     }
 }

@@ -1,6 +1,6 @@
 package Day19.HW19_1;
 
-public class Cow {
+public class Cow extends Animal {
     double weight; //kilogram
     int age;
     String gender;
@@ -49,5 +49,11 @@ public class Cow {
     public void setNickname(String nickname) {
         if (nickname.equals("")) return;
         this.nickname = nickname;
+    }
+
+    @Override
+    public String toString() {
+        String s = "Cow's nickname is " + nickname + ", it's age is " + age + ", it's weight is " + weight + " kilograms and gender is " + gender;
+        return s;
     }
 }

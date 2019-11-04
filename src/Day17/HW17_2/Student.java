@@ -26,6 +26,7 @@ public class Student {
     }
 
     public void setBirthDate(String birthDate) {
+        if (birthDate.equals("")) return;
         this.birthDate = birthDate;
     }
 
@@ -34,6 +35,7 @@ public class Student {
     }
 
     public void setSurname(String surname) {
+        if (surname.equals("")) return;
         this.surname = surname;
     }
 
@@ -42,6 +44,7 @@ public class Student {
     }
 
     public void setName(String name) {
+        if (name.equals("")) return;
         this.name = name;
     }
 
@@ -50,6 +53,7 @@ public class Student {
     }
 
     public void setGender(String gender) {
+        if (gender.equals("")) return;
         this.gender = gender;
     }
 
@@ -60,6 +64,17 @@ public class Student {
     public void setAge(int age) {
         if (age < 0) return;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        String s = "Student's name: " + name +
+                "\nSurname: " + surname +   
+                "\nBirth date: " + birthDate +
+                "\nGender: " + gender +
+                "\nAge: " + age + "\n";
+
+        return s;
     }
 }
 
