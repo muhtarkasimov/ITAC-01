@@ -1,6 +1,7 @@
 package Day21.CW21_1;
 
 public class Bread {
+    static int count = 0;
     double weight;
     double price;
     String produceCompany;

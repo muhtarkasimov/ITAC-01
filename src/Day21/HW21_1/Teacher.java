@@ -2,7 +2,7 @@ package Day21.HW21_1;
 
 public class Teacher extends Person {
 
-    String teacherId;
+    private String teacherId;
 
     public Teacher() {}
 

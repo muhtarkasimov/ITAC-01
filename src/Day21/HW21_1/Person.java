@@ -2,9 +2,9 @@ package Day21.HW21_1;
 
 public class Person {
 
-    String fullName;
-    int age;
-    String gender;
+    private String fullName;
+    private int age;
+    private String gender;
 
     public Person() {
     }

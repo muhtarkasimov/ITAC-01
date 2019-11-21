@@ -2,10 +2,11 @@ package Day21.HW21_1;
 
 public class Student extends Person {
 
-    String studentId;
-    String birthDate;
+    private String studentId;
+    private String birthDate;
 
-    public Student() {}
+    public Student() {
+    }
 
     public Student(String birthDate, String studentId) {
         setBirthDate(birthDate);
@@ -25,6 +26,7 @@ public class Student extends Person {
     }
 
     public void setBirthDate(String birthDate) {
+        if (birthDate.equals("")) return;
         this.birthDate = birthDate;
     }
 

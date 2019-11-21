@@ -2,12 +2,12 @@ package Day21.HW21_1;
 
 public class Class {
 
-    String startDate;
-    Student[] presentStudents;
-    Course course;
-    String startTime;
-    boolean isHWGiven;
-    boolean isBeenExam;
+    private String startDate;
+    private Student[] presentStudents;
+    private Course course;
+    private String startTime;
+    private boolean isHWGiven;
+    private boolean isBeenExam;
 
     public Class() {
     }
