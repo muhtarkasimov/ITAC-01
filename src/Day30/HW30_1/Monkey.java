@@ -57,9 +57,9 @@ public class Monkey implements Climbing, Eating {
         //0 - neither
         //1 - right
         //2 - left
-        if (thingInRightHand.getClass().getName().equals(thing.getClass().getName())) {
+        if (thingInRightHand.equals(thing)) {
             return 1;
-        } else if (thingInLeftHand.getClass().getName().equals(thing.getClass().getName())) {
+        } else if (thingInLeftHand.equals(thing)) {
             return 2;
         } else {
             return 0;
