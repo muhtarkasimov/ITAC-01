@@ -45,10 +45,10 @@ public class Monkey implements Climbing, Eating {
         if (isContainInHand(food) == 0) {
             System.out.println("Monkey has no " + food.getName() + " in his hands");
         } else if (isContainInHand(food) == 1) {
-            System.out.println("Monkey is eating " + thingInRightHand.getClass().getName() + " from his right hand");
+            System.out.println("Monkey is eating " + thingInRightHand + " from his right hand");
             thingInRightHand = null;
         } else if (isContainInHand(food) == 2) {
-            System.out.println("Monkey is eating " + thingInLeftHand.getClass().getName() + " from his left hand");
+            System.out.println("Monkey is eating " + thingInLeftHand + " from his left hand");
             thingInLeftHand = null;
         }
     }
@@ -57,10 +57,14 @@ public class Monkey implements Climbing, Eating {
         //0 - neither
         //1 - right
         //2 - left
-        if (thingInRightHand.equals(thing)) {
-            return 1;
-        } else if (thingInLeftHand.equals(thing)) {
-            return 2;
+        if (thing != null ) {
+            if (thingInRightHand == thing) {
+                return 1;
+            } else if (thingInLeftHand == thing) {
+                return 2;
+            } else {
+                return 0;
+            }
         } else {
             return 0;
         }
