@@ -9,12 +9,31 @@ public class HW31_1 {
         SelectAnimal[] animals = initAnimalsArray(100,1,20,50,500);
 
 
-        // selecting by
+//        // selecting by
+//        for (SelectAnimal sa : animals) {
+//            if (sa instanceof Shark && ((Shark)sa).getAge() > 10) {
+//                System.out.println(((Shark) sa).getName() + " is shark and he is over than 10 years old)");
+//            }
+//        }
+
+        //checking if array is filled correctly:
+        int counter = 0;
         for (SelectAnimal sa : animals) {
-            if (sa instanceof Shark && ((Shark)sa).getAge() > 10) {
-                System.out.println(((Shark) sa).getName() + " is shark and he is over than 10 years old)");
+            counter++;
+            System.out.println(counter + ".--------------------------\n" + sa);
+            if (sa instanceof Turtle) {
+                System.out.println(((Turtle) sa).getName() + "  -name");
+                System.out.println(((Turtle) sa).getAge() + "  -age");
+            } else if (sa instanceof Shark) {
+                System.out.println(((Shark) sa).getName() + "  -name");
+                System.out.println(((Shark) sa).getAge() + "  -age");
+            } else if (sa instanceof Duck) {
+                System.out.println(((Duck) sa).getName() + "  -name");
+                System.out.println(((Duck) sa).getAge() + "  -age");
             }
+            System.out.println();
         }
+
     }
 
     public static SelectAnimal[] initAnimalsArray(int size,
@@ -31,12 +50,11 @@ public class HW31_1 {
             int randomWeight = random.nextInt((weightMaxBound - weightMinBound + 1) + weightMinBound);
 
             switch (random.nextInt(3)) {
-                case 0: animals[i] = new Turtle(randomName,randomAge,randomWeight);
-                case 1: animals[i] = new Shark(randomName,randomAge,randomWeight);
-                case 2: animals[i] = new Duck(randomName,randomAge,randomWeight);
+                case 0: animals[i] = new Turtle(randomName,randomAge,randomWeight); break;
+                case 1: animals[i] = new Shark(randomName,randomAge,randomWeight); break;
+                case 2: animals[i] = new Duck(randomName,randomAge,randomWeight); break;
             }
         }
-
 
         return animals;
     }
