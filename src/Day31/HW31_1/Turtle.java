@@ -6,17 +6,33 @@ public class Turtle implements SelectAnimal {
     private int age;
     private double weight;
 
-    @Override
-    public void selectEqualOrGreaterByWeight(double weight) {
-        if (this.weight >= weight) {
-            System.out.println("Selected Turtle with name " + name + " by weight");
-        }
+    public Turtle(String name, int age, double weight) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
     }
 
-    @Override
-    public void selectEqualOrGreaterByAge(int age) {
-        if (this.age >= age) {
-            System.out.println("Selected Turtle with name " + name + " by age");
-        }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 }
