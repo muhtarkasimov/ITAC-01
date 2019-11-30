@@ -9,7 +9,7 @@ public class CW32_2 {
 
         FileWriter fileWriter = new FileWriter("CW32_2.txt");
 
-        for (int i = 65; i < 91; i++) {
+        for (int i = 'A'; i <= 'Z'; i++) {
             fileWriter.write((char)i);
         }
         fileWriter.write("\n");
@@ -17,9 +17,6 @@ public class CW32_2 {
             fileWriter.write("" + i);
         }
 
-
-
         fileWriter.close();
-
     }
 }
