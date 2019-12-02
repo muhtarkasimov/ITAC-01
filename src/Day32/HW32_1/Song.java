@@ -3,14 +3,14 @@ package Day32.HW32_1;
 public class Song {
 
     private String name;
-    private String singerName;
     private String genre;
+    private String singerName;
     private String lyrics;
 
-    public Song(String name, String singerName, String genre, String lyrics) {
+    public Song(String name, String genre, String singerName, String lyrics) {
         setName(name);
-        setSingerName(singerName);
         setGenre(genre);
+        setSingerName(singerName);
         setLyrics(lyrics);
     }
 
@@ -60,5 +60,13 @@ public class Song {
             return;
         }
         this.lyrics = lyrics;
+    }
+
+    @Override
+    public String toString() {
+        return "" + getName() + "\n" +
+                getSingerName() + "\n" +
+                getGenre() + "\n" +
+                getLyrics() + "\n";
     }
 }
