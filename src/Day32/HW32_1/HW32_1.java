@@ -26,5 +26,6 @@ public class HW32_1 {
         Song song = new Song(songName, singerName, songGenre, songText);
 
         System.out.println(song);
+        fr.close();
     }
 }
