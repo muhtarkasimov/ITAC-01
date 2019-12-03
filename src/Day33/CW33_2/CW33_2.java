@@ -14,14 +14,17 @@ public class CW33_2 {
             for (; i < cats.length + 1; i++) {
                 System.out.println(cats[i].getName());
             }
-        } catch (NullPointerException npe) {
-            //code for npe catching and etc.
-        } catch (Exception e) {
-            System.out.println("Error is appeared in cats array on index: " + i);
-            e.printStackTrace();
+//        } catch (NullPointerException npe) {
+//            //code for npe catching and etc.
+//        } catch (Exception e) {
+//            System.out.println("Error is appeared in cats array on index: " + i);
+//            e.printStackTrace();
         } finally {
             System.out.println("'finally {}' field is printed");
         }
+        // spoiler: the 'code run check' will not be displayed, because of the exceptions stops code
+        // but the 'finally part' will work
+        // output will be 'Murzik, Bobik, finally field' displayed and after this OutOfBound exception will appear
         System.out.println("'code run check'");
     }
 }
