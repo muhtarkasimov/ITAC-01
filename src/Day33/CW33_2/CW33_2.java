@@ -14,6 +14,8 @@ public class CW33_2 {
             for (; i < cats.length + 1; i++) {
                 System.out.println(cats[i].getName());
             }
+        } catch (NullPointerException npe) {
+            //code for npe catching and etc.
         } catch (Exception e) {
             System.out.println("Error is appeared in cats array on index: " + i);
             e.printStackTrace();
