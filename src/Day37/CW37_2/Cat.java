@@ -41,4 +41,9 @@ public class Cat {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "name: " + name + "\nage: " + age;
+    }
 }
