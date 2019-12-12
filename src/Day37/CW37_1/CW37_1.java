@@ -3,6 +3,8 @@ import java.util.*;
 
 public class CW37_1 {
 
+    //коллизия - два обьекта не равны но при этом hashcode'ы их одинаковы
+
     public static void main(String[] args) {
         ArrayList<Multiple> list = new ArrayList<>();
         add(new Multiple(10,10), list);
