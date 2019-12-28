@@ -18,5 +18,19 @@ public class DB {
         return conn;
     }
 
+    public int getTrainersCount() {
+        String SQL = "SELECT count(*) FROM trainers";
+        int count = 0;
+
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(SQL)) {
+            rs.next();
+            count = rs.getInt(1);
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+        return count;
+    }
 
 }
