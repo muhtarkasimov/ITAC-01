@@ -10,11 +10,12 @@ public class Main {
     public static void main(String[] args) throws SQLException {
 
         DB db = new DB();
-        Connection connection = db.connect();
+//        Connection connection = db.connect();
+//        Scanner sc = new Scanner(System.in);
+//        sc.nextLine();
+//        if (connection != null) connection.close();
 
-        Scanner sc = new Scanner(System.in);
-        sc.nextLine();
-        if (connection != null) connection.close();
+        System.out.println(db.getTrainersCount());
 
 
 
