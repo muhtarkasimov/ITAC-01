@@ -101,5 +101,21 @@ public class DB {
         }
     }
 
+    public void addTown(int id, String name, int country, int mayor, long population) {
+        String SQL = "insert into town (id, name, country, mayor, population) values (?,?,?,?,?)";
+
+        try (Connection con = connect();
+             PreparedStatement st = con.prepareStatement(SQL)
+        ) {
+            st.setInt(1, id);
+            st.setString(2, name);
+            st.setInt(3, country);
+            st.setInt(4, mayor);
+            st.setLong(5, population);
+            st.executeUpdate();
+        } catch (SQLException e ) {
+            e.printStackTrace();
+        }    }
+
 //    public int
 }
