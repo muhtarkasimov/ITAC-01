@@ -69,5 +69,20 @@ public class DB {
         return count;
     }
 
+    public void insertPeople(int id, String name, Date bdate) {
+        String SQL = "insert into person(id, fullname, birthdate) values (?,?,?)";
+
+        try (Connection con = connect();
+             PreparedStatement statement = con.prepareStatement(SQL))
+        {
+            statement.setInt(1, id);
+            statement.setString(2, name);
+            statement.setDate(3, bdate);
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 //    public int
 }
