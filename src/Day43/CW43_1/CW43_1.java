@@ -1,6 +1,7 @@
 package Day43.CW43_1;
 
 import Day42.CW42_1.DB;
+import Day43.CW43_1.Model.Country;
 
 import java.sql.Date;
 
@@ -15,7 +16,10 @@ public class CW43_1 {
 
 //        db.insertPeople(11, "Aidin Sabyrov", new Date("1/3/1999"));
 //        db.addCountry(3, "Ukraine", "UA", 42000000, 4);
-        db.addTown(4, "Kiev", 3, 4, 2800000);
-
+//        db.addTown(4, "Kiev", 3, 4, 2800000);
+        for (Country c : db.getAllCountries()) {
+            System.out.println(c);
+            System.out.println();
+        }
     }
 }

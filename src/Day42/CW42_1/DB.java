@@ -1,6 +1,10 @@
 package Day42.CW42_1;
 
+import Day43.CW43_1.Model.Country;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DB {
     private final String url = "jdbc:postgresql://localhost:5432/";
@@ -73,8 +77,7 @@ public class DB {
         String SQL = "insert into person(id, fullname, birthdate) values (?,?,?)";
 
         try (Connection con = connect();
-             PreparedStatement statement = con.prepareStatement(SQL))
-        {
+             PreparedStatement statement = con.prepareStatement(SQL)) {
             statement.setInt(1, id);
             statement.setString(2, name);
             statement.setDate(3, bdate);
@@ -113,9 +116,32 @@ public class DB {
             st.setInt(4, mayor);
             st.setLong(5, population);
             st.executeUpdate();
-        } catch (SQLException e ) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        }    }
+        }
+    }
+
+    public List<Country> getAllCountries() {
+        String SQL = "select * from country";
+        List<Country> list = new ArrayList<>();
+
+        try (Connection con = connect();
+             Statement st = con.createStatement();
+             ResultSet rs = st.executeQuery(SQL)
+        ) {
+            while (rs.next()) {
+                list.add(new Country(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("code"),
+                        rs.getLong("population"),
+                        rs.getInt("president")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
 //    public int
 }
