@@ -84,5 +84,22 @@ public class DB {
         }
     }
 
+    public void addCountry(int id, String name, String code, long population, int president) {
+        String SQL = "insert into country (id, name, code, population, president) values (?,?,?,?,?)";
+
+        try (Connection con = connect();
+             PreparedStatement st = con.prepareStatement(SQL)
+        ) {
+            st.setInt(1, id);
+            st.setString(2, name);
+            st.setString(3, code);
+            st.setLong(4, population);
+            st.setInt(5, president);
+            st.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 //    public int
 }
